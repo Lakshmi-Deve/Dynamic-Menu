@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Dynamic Menu</title>
+    <style>
+        .menu {
+            list-style-type: none;
+            padding: 0;
+        }
+        .menu li {
+            margin: 5px 0;
+        }
+    </style>
+    <script>
+        function updateMenu() {
+            var category = document.getElementById("categorySelect").value;
+            var menu = document.getElementById("menu");
+            menu.innerHTML = "";  // Clear the current menu items
+
+            if (category === "fruits") {
+                menu.innerHTML = "<li>Apple</li><li>Banana</li><li>Orange</li>";
+            } else if (category === "vegetables") {
+                menu.innerHTML = "<li>Carrot</li><li>Broccoli</li><li>Spinach</li>";
+            } else if (category === "animals") {
+                menu.innerHTML = "<li>Dog</li><li>Cat</li><li>Elephant</li>";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Simple Dynamic Menu Example</h1>
+
+    <label for="categorySelect">Select a Category:</label>
+    <select id="categorySelect" onchange="updateMenu()">
+        <option value="">--Choose a category--</option>
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="animals">Animals</option>
+    </select>
+
+    <ul id="menu" class="menu">
+        <!-- Dynamic menu items will be inserted here -->
+    </ul>
+
+</body>
+</html>
